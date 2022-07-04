@@ -10,7 +10,6 @@ public class Computer {
     }
 
 
-
     public void printState() {
         System.out.println("Computer: ram " + ram.getValue());
         System.out.println("Computer: ssd " + ssd.getValue());
