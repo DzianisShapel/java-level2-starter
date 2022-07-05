@@ -1,20 +1,35 @@
 package com.dmdev.oop.homework1;
 
 public class Floor {
-    private int number;
-    private int[] flatsCount;
-    private  Flat flats;
+    private int floorNumber;
+    private  Flat[] flats;
 
-    public Floor(int number, int[] flatsCount, Flat flats) {
-        this.number = number;
-        this.flatsCount = flatsCount;
+    public Floor(int floorNumber, Flat[] flats) {
+        this.floorNumber = floorNumber;
         this.flats = flats;
     }
 
+    public int getFloorNumber() {
+        return floorNumber;
+    }
 
+    public void setFloorNumber(int floorNumber) {
+        this.floorNumber = floorNumber;
+    }
+
+    public Flat[] getFlats() {
+        return flats;
+    }
+
+    public void setFlats(Flat[] flats) {
+        this.flats = flats;
+    }
 
     public void print(){
-        System.out.println("Floor: " + number + " Flats count: " + flatsCount.length);
+        System.out.println("Floor: " + floorNumber + " Flats count: " + flats.length);
+        for (Flat flat: flats) {
+            System.out.println(flat.getFlatNumber());
+        }
     }
 
 }

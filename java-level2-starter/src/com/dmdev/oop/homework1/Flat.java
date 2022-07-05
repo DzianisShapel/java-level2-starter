@@ -1,27 +1,37 @@
 package com.dmdev.oop.homework1;
 
 public class Flat {
-    private int number;
-    private int[] rooms;
-    private Room IsPassage;
+    private int flatNumber;
+    private Room[] rooms;
 
-    public Flat(int number, int[] rooms, Room IsPassage) {
-        this.number = number;
+    public Flat(int flatNumber, Room[] rooms) {
+        this.flatNumber = flatNumber;
         this.rooms = rooms;
-        this.IsPassage = IsPassage;
     }
 
-    public int getValue(){
-        return number;
+    public int getFlatNumber() {
+        return flatNumber;
     }
 
-    public void setValue(int number, Room IsPassage){
-        this.number = number;
-        this.IsPassage = IsPassage;
+    public void setFlatNumber(int flatNumber) {
+        this.flatNumber = flatNumber;
     }
+
+    public Room[] getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Room[] rooms) {
+        this.rooms = rooms;
+    }
+
 
     public void print(){
-        System.out.println("Flat: " + number + " Rooms count: " + rooms.length);
+        System.out.println("Flat: " + flatNumber + " Rooms count: " + rooms.length);
+
+        for (Room room : rooms) {
+            System.out.println("Room is passage: " + room.IsPassage);
+              }
     }
 
 }

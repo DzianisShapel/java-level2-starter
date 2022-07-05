@@ -3,21 +3,41 @@ package com.dmdev.oop.homework1;
 public class MyHomeRunner {
     public static void main(String[] args) {
 
-        Room room = new Room(true);
-        room.print();
-        Flat flat = new Flat(2, new int[]{1,2,3,4}, room);
-        flat.print();
-        Floor floor = new Floor(5, new int[]{1,2,3}, flat);
-        floor.print();
-        House house = new House(5, new int[]{1,2,3,4,5,6}, floor, flat, room);
-        house.print();
+        Room room1 = new Room(true);
+        Room room2 = new Room(false);
+        Room room3 = new Room(false);
+        Room room4 = new Room(false);
+        Room room5 = new Room(false);
 
+        Flat flat1 = new Flat(1, new Room[]{room1,room2, room3});
+        Flat flat2 = new Flat(2, new Room[]{room4});
+        Flat flat3 = new Flat(3, new Room[]{room5});
 
+        Floor floor1 = new Floor(1,new Flat[]{flat2, flat3});
+        Floor floor2 = new Floor(2,new Flat[]{flat1});
+
+        House house = new House(1,new Floor[]{floor1, floor2});
+
+       // printAllInformation(house);
+        flat1.print();
 
     }
 
     public static void printAllInformation(House house){
+        house.print();
 
+
+       /* Floor[] floors = new Floor[0];
+        Flat[] flats = new Flat[0];
+        Room[] rooms = new Room[0];
+
+        for (Floor floor: floors) {
+            for (Flat flat: flats) {
+                for (Room room : rooms) {
+                    System.out.println(room.IsPassage);
+                }
+            }
+        }*/
     }
 
 }
