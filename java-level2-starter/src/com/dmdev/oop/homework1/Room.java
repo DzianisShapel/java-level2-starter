@@ -16,7 +16,7 @@ public class Room {
     }
 
     public void print(){
-        System.out.println("Room is passage: " + IsPassage);
+        System.out.print("Room is passage: " + IsPassage + " ");
     }
 
 }

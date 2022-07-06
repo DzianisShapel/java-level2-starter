@@ -26,10 +26,10 @@ public class House {
         this.floors = floors;
     }
 
-    void print(){
+    void print() {
         System.out.println("House number is: " + houseNumber + " Floors count: " + floors.length);
-        for (Floor floor: floors) {
-            System.out.println(floor.getFloorNumber());
+        for (Floor floor : floors) {
+            floor.print();
         }
 
     }

@@ -26,12 +26,12 @@ public class Flat {
     }
 
 
-    public void print(){
+    public void print() {
         System.out.println("Flat: " + flatNumber + " Rooms count: " + rooms.length);
 
         for (Room room : rooms) {
-            System.out.println("Room is passage: " + room.IsPassage);
-              }
+            room.print();
+        }
     }
 
 }

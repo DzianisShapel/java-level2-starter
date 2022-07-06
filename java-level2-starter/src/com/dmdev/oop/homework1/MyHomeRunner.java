@@ -18,26 +18,13 @@ public class MyHomeRunner {
 
         House house = new House(1,new Floor[]{floor1, floor2});
 
-       // printAllInformation(house);
-        flat1.print();
+       printAllInformation(house);
 
     }
 
     public static void printAllInformation(House house){
         house.print();
 
-
-       /* Floor[] floors = new Floor[0];
-        Flat[] flats = new Flat[0];
-        Room[] rooms = new Room[0];
-
-        for (Floor floor: floors) {
-            for (Flat flat: flats) {
-                for (Room room : rooms) {
-                    System.out.println(room.IsPassage);
-                }
-            }
-        }*/
     }
 
 }

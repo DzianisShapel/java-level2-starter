@@ -2,7 +2,7 @@ package com.dmdev.oop.homework1;
 
 public class Floor {
     private int floorNumber;
-    private  Flat[] flats;
+    private Flat[] flats;
 
     public Floor(int floorNumber, Flat[] flats) {
         this.floorNumber = floorNumber;
@@ -25,10 +25,10 @@ public class Floor {
         this.flats = flats;
     }
 
-    public void print(){
+    public void print() {
         System.out.println("Floor: " + floorNumber + " Flats count: " + flats.length);
-        for (Flat flat: flats) {
-            System.out.println(flat.getFlatNumber());
+        for (Flat flat : flats) {
+            flat.print();
         }
     }
 
