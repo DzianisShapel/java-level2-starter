@@ -10,6 +10,8 @@ package com.dmdev.oop.lesson11.homework1;
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
 * */
 
+//не работает
+
 public class ATM {
     private int amountNominal20;
     private int amountNominal50;
@@ -46,30 +48,29 @@ public class ATM {
     }
 
     public boolean withdrawal(int sum){
-        int balance = getAmountNominal20()*20 + getAmountNominal50()*50 + getAmountNominal100()*100;
+        int balance = amountNominal20*20 + amountNominal50*50 + amountNominal100*100;
         int balanceAfterWithdrawal;
         if(balance >= sum){
             balanceAfterWithdrawal = balance - sum;
             balance = balanceAfterWithdrawal;
 
-        /*    int amount20 = getAmountNominal20();
-            int amount50 = getAmountNominal50();
-            int amount100 = getAmountNominal100();*/
+            int billAmount100 = sum / 100;
+            int ostatokAfter100 = sum % 100;
+            int billAmount50 = ostatokAfter100 / 50;
+            int ostatokAfter50 = billAmount50 % 50;
+            int billAmount20 = ostatokAfter50 / 20;
 
-            int billAmount100 = sum / amountNominal100;
-            int ostatokAfter100 = sum % amountNominal100;
-            int billAmountAfter50 = ostatokAfter100 / amountNominal50;
-            int billAmountAfter20 = billAmountAfter50 / amountNominal20;
-
-
-            if(ostatokAfter100 == 0){
+            if(ostatokAfter100 != 0){
                 System.out.println("Withdrawal will be executed with bill's nominal 100, count: " + billAmount100);
-            } else if ((ostatokAfter100 % amountNominal50) == 0 ){
-                System.out.println("Withdrawal will be executed with bill's nominal 50, count: " + billAmountAfter50);
-            } else {
-                System.out.println("Withdrawal will be executed with bill's nominal 20, count: " + billAmountAfter20);
+            }
+            if (ostatokAfter100 != 0 ){
+                System.out.println("Withdrawal will be executed with bill's nominal 50, count: " + billAmount50);
+            }
+            if(billAmount20 !=0) {
+                System.out.println("Withdrawal will be executed with bill's nominal 20, count: " + billAmount20);
             }
             return true;
+
         }  else {
             return false;
         }
