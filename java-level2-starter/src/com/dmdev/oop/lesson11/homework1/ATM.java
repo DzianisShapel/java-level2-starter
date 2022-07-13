@@ -12,6 +12,8 @@ import java.util.Scanner;
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
 * */
 
+//не работает
+
 public class ATM {
     private Bablo[] b;
     private final int[] nam = new int[]{20, 50, 100, 200, 500, 1000};
