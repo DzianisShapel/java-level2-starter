@@ -20,4 +20,23 @@ public class Computer {
         System.out.println("Я загрузился");
     }
 
+    public Ram getRam() {
+        return ram;
+    }
+
+    public void setRam(Ram ram) {
+        this.ram = ram;
+    }
+
+    public Ssd getSsd() {
+        return ssd;
+    }
+
+    public void setSsd(Ssd ssd) {
+        this.ssd = ssd;
+    }
+
+    public static void setCounter(int counter) {
+        Computer.counter = counter;
+    }
 }

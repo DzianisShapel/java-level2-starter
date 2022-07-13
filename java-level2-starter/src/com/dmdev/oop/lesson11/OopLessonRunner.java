@@ -1,5 +1,7 @@
 package com.dmdev.oop.lesson11;
 
+import com.dmdev.oop.lesson11.practice.Laptop;
+
 public class OopLessonRunner {
 
     public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class OopLessonRunner {
 
         Computer computer = new Computer(ram, ssd);
         computer.load();
-        double sin = Math.sin(2.5);
+
+        Laptop laptop = new Laptop(new Ram(512), new Ssd(250),2);
+        laptop.load();
+        laptop.open();
+
     }
 }
