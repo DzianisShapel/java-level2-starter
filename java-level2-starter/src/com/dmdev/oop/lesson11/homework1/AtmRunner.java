@@ -1,4 +1,5 @@
-package com.dmdev.oop.lesson11.homework1;
+
+/*package com.dmdev.oop.lesson11.homework1;
 
 public class AtmRunner {
 
@@ -7,3 +8,4 @@ public class AtmRunner {
         myAtm.withdrawal(400);
     }
 }
+*/

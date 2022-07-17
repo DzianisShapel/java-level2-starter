@@ -1,19 +1,29 @@
 package com.dmdev.oop.lesson11;
 
-import com.dmdev.oop.lesson11.practice.Laptop;
+
 
 public class OopLessonRunner {
 
-    public static void main(String[] args) {
-        Ram ram = new Ram(1024);
-        Ssd ssd = new Ssd(500);
+        public static void main(String[] args) {
+            Computer laptop = new Laptop(new Ram(1024), new Ssd(250), 2);
+            Computer mobile = new Mobile(new Ram(512), new Ssd(125));
 
-        Computer computer = new Computer(ram, ssd);
-        computer.load();
+            loadComputers(laptop, mobile);
+            printInformation(new Computer[]{laptop, mobile});
+        }
 
-        Laptop laptop = new Laptop(new Ram(512), new Ssd(250),2);
-        laptop.load();
-        laptop.open();
+        public static void printInformation(Computer[] computers) {
+            for (Computer computer : computers) {
+                computer.print();
+                System.out.println();
+            }
+        }
 
-    }
+        public static void loadComputers(Computer... computers) {
+            for (Computer computer : computers) {
+                computer.load();
+                System.out.println();
+            }
+        }
+
 }

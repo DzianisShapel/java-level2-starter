@@ -1,4 +1,4 @@
-package com.dmdev.oop.lesson11.practice;
+package com.dmdev.oop.lesson11;
 
 import com.dmdev.oop.lesson11.Computer;
 import com.dmdev.oop.lesson11.Ram;
@@ -24,5 +24,11 @@ public class Laptop  extends Computer {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public void load() {
+        open();
+        System.out.println("I am LapTop");
     }
 }

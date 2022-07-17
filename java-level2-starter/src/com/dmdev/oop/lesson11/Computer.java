@@ -1,6 +1,6 @@
 package com.dmdev.oop.lesson11;
 
-public class Computer {
+public abstract class Computer implements Printable {
     private Ram ram;
     private Ssd ssd;
     private static int counter = 0;
@@ -11,14 +11,18 @@ public class Computer {
 
 
     }
-
+    @Override
+    public void print() {
+        System.out.println("Ssd " + ssd.getValue() + ", ram: " + ram.getValue());
+    }
+    public abstract void load();
     public static int getCounter() {
         return counter;
     }
 
-    public void load() {
+    /*public void load() {
         System.out.println("Я загрузился");
-    }
+    }*/
 
     public Ram getRam() {
         return ram;
