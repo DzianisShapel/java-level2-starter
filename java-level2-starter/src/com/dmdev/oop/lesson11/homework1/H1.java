@@ -1,7 +1,7 @@
 package com.dmdev.oop.lesson11.homework1;
 
 import java.util.Scanner;
-
+/*
 public class H1 {
 
         private static ATM atm;
@@ -33,3 +33,4 @@ public class H1 {
             sc.close();
         }
 }
+*/
