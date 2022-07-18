@@ -50,6 +50,11 @@ public class ATM {
     public boolean withdrawal(int sum){
         int balance = amountNominal20*20 + amountNominal50*50 + amountNominal100*100;
         int balanceAfterWithdrawal;
+
+
+
+
+
         if(balance >= sum){
             balanceAfterWithdrawal = balance - sum;
             balance = balanceAfterWithdrawal;
