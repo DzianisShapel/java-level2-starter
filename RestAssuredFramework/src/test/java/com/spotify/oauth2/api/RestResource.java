@@ -12,13 +12,13 @@ import static com.spotify.oauth2.api.SpecBuilder.*;
 import static io.restassured.RestAssured.given;
 
 public class RestResource {
-    static String access_token = "BQBtLzEzWZOZTuErIhoTR1_lnl0iZoNHrw0El4b7lLoDF5kTOs0UY--f2hp7vixjqaO-UWUL98uPTsRTikLwFWYqrDoEg22RVsNnxHQcOkQJVfIctZOoB9TV5SqGL4MHp1FnG0HzhLCNuWuVNV3oD3tlFsUEru11AO0_tTHdvDzcM19vKjtiaMfA_zdET4H5ePM0kb3-6BvYhBP4UwO6n_1n2Gu8w7LpsYLNE6w6L0oADdERvtk-SUQbLKnK7CTOYAZkBBVyBBS8_nWC";
+    static String access_token = "BQCAiS_kA5OPnH901I0GlI-fZnqaEuJnffmssYvmbg6HatbXGitVAeIzng2vGy5Gbjp_DEZ_DVX0OF-uSUdnm-O7lyCG9IeAkwfPgRw59W_-iyPEUwlhucZFJacJqf08paBJEiqvgWufybLbv5V04501QDgvXvrByXAR4WFOwCaJSxmbnt9HRmTWZdihwB0SKZ7nNkYJAR78owhRGpOz5_8P4FB7u5Ig14aIovRorK31nz5d8PnXfQ7n1Nub3Gqth-xeHxT3uUrARYoV";
 
    public static Response post(String path, String token, Object requestPlayList) {
 
        return given(getRequestSpecification()).
                body(requestPlayList).
-               header("Authorization","Bearer " + token).
+               auth().oauth2(token).
        when().
                post(path).
        then().spec(getResponseSpecification()).
@@ -28,7 +28,7 @@ public class RestResource {
 
     public static Response get(String path, String token) {
       return given(getRequestSpecification()).
-                header("Authorization","Bearer " + token).
+              auth().oauth2(token).
       when().
                 get(path).
       then().spec(getResponseSpecification()).
@@ -39,7 +39,7 @@ public class RestResource {
     public static Response put(String path, String token, Object requestPlayList) {
         return given(getRequestSpecification()).
                 body(requestPlayList).
-                header("Authorization","Bearer " + token).
+                auth().oauth2(token).
         when().put(path).
                 then().spec(getResponseSpecification()).
                 extract().
